@@ -14,6 +14,8 @@ public:
   BaseBlock(EventQueue* event_queue) : Agent(event_queue) {}
   ~BaseBlock() {}
 
+  EventQueue* event_queue() { return m_event_queue; }
+
   void addInput(BaseBlock input)   { m_input.push_back(input);   }
   void addOutput(BaseBlock output) { m_output.push_back(output); }
 };
@@ -30,11 +32,14 @@ public:
 
 class RegisterBlock : public BaseBlock {
 private:
+  Clock* m_clock;
+
 public:
-  RegisterBlock(Clock clock);
+  RegisterBlock(Clock* clock);
   ~RegisterBlock();
   virtual void recvEvent(Agent* src, uint8_t* data, uint64_t size);
-  void update();
+  virtual void update();
+  virtual void updateOutput();
 };
 
 class WireBlock : public BaseBlock {

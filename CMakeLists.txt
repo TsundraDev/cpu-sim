@@ -10,6 +10,7 @@ add_subdirectory(include/event-sim)
 add_executable(cpu-sim-test
   src/main.cpp
   src/Clock.cpp
+  src/RegisterBlock.cpp
 )
 include_directories(cpu-sim-test include/event-sim)
 target_link_libraries(cpu-sim-test event-sim)
