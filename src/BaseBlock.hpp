@@ -38,7 +38,8 @@ public:
   RegisterBlock(Clock* clock);
   ~RegisterBlock();
   virtual void recvEvent(Agent* src, uint8_t* data, uint64_t size);
-  virtual void update();
+  virtual void update(Agent* src, uint8_t* data, uint64_t size);
+  virtual void updateRegister();
   virtual void updateOutput();
 };
 

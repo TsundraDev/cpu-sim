@@ -10,14 +10,18 @@ RegisterBlock::~RegisterBlock() {
 
 void RegisterBlock::recvEvent(Agent* src, uint8_t* data, uint64_t size) {
   if (src == m_clock) {
-    this->update();
+    this->updateRegister();
     this->updateOutput();
   } else {
-    this->update();
+    this->update(src, data, size);
   }
 }
 
-void RegisterBlock::update() {
+void RegisterBlock::update(Agent* src, uint8_t* data, uint64_t size) {
+
+}
+
+void RegisterBlock::updateRegister() {
 
 }
 
@@ -28,3 +32,4 @@ void RegisterBlock::updateOutput() {
     this->createEvent(Event(cur_tick, this, &(m_output[i])));
   }
 }
+
