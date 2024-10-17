@@ -1,4 +1,6 @@
 #include "BaseBlock.hpp"
+#include <cstdio>
+#include <cstdlib>
 
 RegisterBlock::RegisterBlock(Clock* clock) :
   BaseBlock(clock->event_queue()),
@@ -10,26 +12,25 @@ RegisterBlock::~RegisterBlock() {
 
 void RegisterBlock::recvEvent(Agent* src, uint8_t* data, uint64_t size) {
   if (src == m_clock) {
-    this->updateRegister();
+    this->updateBlock();
     this->updateOutput();
   } else {
-    this->update(src, data, size);
+    this->updateInput(src, data, size);
   }
 }
 
-void RegisterBlock::update(Agent* src, uint8_t* data, uint64_t size) {
-
+void RegisterBlock::updateInput(Agent* src, uint8_t* data, uint64_t size) {
+  fprintf(stderr, "Unimplemented RegisterBlock::updateInput\n");
+  exit(1);
 }
 
-void RegisterBlock::updateRegister() {
-
+void RegisterBlock::updateBlock() {
+  fprintf(stderr, "Unimplemented RegisterBlock::updateBlock\n");
+  exit(1);
 }
 
 void RegisterBlock::updateOutput() {
-  // Update output
-  uint64_t cur_tick = m_event_queue->tick();
-  for (uint64_t i = 0; i < m_output.size(); i++) {
-    this->createEvent(Event(cur_tick, this, &(m_output[i])));
-  }
+  fprintf(stderr, "Unimplemented RegisterBlock::updateOutput\n");
+  exit(1);
 }
 

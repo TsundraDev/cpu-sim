@@ -19,17 +19,16 @@ public:
     m_val(std::pair<BaseBlock*, uint64_t>(nullptr, 0)),
     m_reg(std::pair<BaseBlock*, uint64_t>(nullptr, 0)) {}
 
-  void update(Agent* src, uint8_t* data, uint64_t size) {
+  void updateInput(Agent* src, uint8_t* data, uint64_t size) {
     assert(src == (Agent*)m_val.first);
     m_val.second = *(uint64_t*)data;
   }
 
-  void updateRegister() {
+  void updateBlock() {
     m_reg.second = m_val.second;
   }
 
   void updateOutput() {
-    // Update output
     uint64_t cur_tick = m_event_queue->tick();
     uint64_t* send_data = new uint64_t;
     *send_data = m_reg.second;

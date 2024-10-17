@@ -6,24 +6,22 @@
 #include <event-sim.hpp>
 
 class BaseBlock : public Agent {
-protected:
-  std::vector<BaseBlock> m_input;
-  std::vector<BaseBlock> m_output;
-
 public:
   BaseBlock(EventQueue* event_queue) : Agent(event_queue) {}
   ~BaseBlock() {}
 
   EventQueue* event_queue() { return m_event_queue; }
-
-  void addInput(BaseBlock input)   { m_input.push_back(input);   }
-  void addOutput(BaseBlock output) { m_output.push_back(output); }
 };
 
 class Clock : public BaseBlock {
+private:
+  std::vector<BaseBlock*> m_output;
+
 public:
   Clock(EventQueue* event_queue);
   ~Clock();
+
+  void addOutput(BaseBlock* clocked_block) { m_output.push_back(clocked_block); }
 
   void init();
   void recvEvent(Agent* src, uint8_t* data, uint64_t size);
@@ -38,8 +36,8 @@ public:
   RegisterBlock(Clock* clock);
   ~RegisterBlock();
   virtual void recvEvent(Agent* src, uint8_t* data, uint64_t size);
-  virtual void update(Agent* src, uint8_t* data, uint64_t size);
-  virtual void updateRegister();
+  virtual void updateInput(Agent* src, uint8_t* data, uint64_t size);
+  virtual void updateBlock();
   virtual void updateOutput();
 };
 
