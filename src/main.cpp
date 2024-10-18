@@ -15,9 +15,11 @@ int main() {
   Register pc = Register(&clock);
   UpdatePC update_pc = UpdatePC(&event_queue);
 
+  // Setup PC
   pc.setInput(&update_pc);
   pc.addOutput(&update_pc);
 
+  // Setup UpdatePC
   update_pc.setInput(&pc);
   update_pc.addOutput(&pc);
 
