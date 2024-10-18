@@ -10,6 +10,7 @@ add_subdirectory(include/event-sim)
 add_executable(cpu-sim-test
   src/main.cpp
   src/Clock.cpp
+  src/WireBlock.cpp
   src/RegisterBlock.cpp
   src/Register.cpp
 )

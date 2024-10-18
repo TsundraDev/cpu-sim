@@ -1,6 +1,7 @@
 #include "Register.hpp"
 
 #include <cassert>
+#include <cstdio>
 
 Register::Register(Clock* clock) :
   RegisterBlock(clock),
@@ -22,6 +23,7 @@ void Register::updateInput(Agent* src, uint8_t* data, uint64_t size) {
 
 void Register::updateBlock() {
   m_reg.first = m_val.second;
+  printf("Reg val : %ld\n", m_reg.first);
 }
 
 void Register::updateOutput() {

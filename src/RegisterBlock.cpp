@@ -4,7 +4,9 @@
 
 RegisterBlock::RegisterBlock(Clock* clock) :
   BaseBlock(clock->event_queue()),
-  m_clock(clock) {}
+  m_clock(clock) {
+  clock->addOutput(this);
+}
 
 RegisterBlock::~RegisterBlock() {
 
