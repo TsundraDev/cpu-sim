@@ -23,7 +23,7 @@ void Register::updateInput(Agent* src, uint8_t* data, uint64_t size) {
 
 void Register::updateBlock() {
   m_reg.first = m_val.second;
-  printf("Reg val : %ld\n", m_reg.first);
+  printf("Reg val : %lx\n", m_reg.first);
 }
 
 void Register::updateOutput() {

@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <cassert>
 
 #include "event-sim.hpp"
 #include "BaseBlock.hpp"
@@ -23,10 +24,17 @@ public:
   void setInput(BaseBlock* block)  { m_in.first = block; }
   void addOutput(BaseBlock* block) { m_out.second.push_back(block); }
 
-  void update(Agent* src, uint8_t* data, uint64_t size) {
+  void updateInput(Agent* src, uint8_t* data, uint64_t size) {
     // Update output values
-    m_out.first = *(uint64_t*)data + 4;
-    
+    assert(src == (Agent*)m_in.first);
+    m_in.second = *(uint64_t*)data;
+  }
+
+  void updateBlock() {
+    m_out.first = m_in.second + 4;
+  }
+
+  void updateOutput() {
     // Update output blocks
     uint64_t cur_tick = m_event_queue->tick();
     uint64_t* send_data = new uint64_t;

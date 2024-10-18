@@ -10,10 +10,22 @@ WireBlock::~WireBlock() {
 }
 
 void WireBlock::recvEvent(Agent* src, uint8_t* data, uint64_t size) {
-  this->update(src, data, size);
+  this->updateInput(src, data, size);
+  this->updateBlock();
+  this->updateOutput();
 }
 
-void WireBlock::update(Agent* src, uint8_t* data, uint64_t size) {
+void WireBlock::updateInput(Agent* src, uint8_t* data, uint64_t size) {
   fprintf(stderr, "Unimplemented WireBlock::update\n");
+  exit(1);
+}
+
+void WireBlock::updateBlock() {
+  fprintf(stderr, "Unimplemented WireBlock::updateBlock\n");
+  exit(1);
+}
+
+void WireBlock::updateOutput() {
+  fprintf(stderr, "Unimplemented WireBlock::updateOutput\n");
   exit(1);
 }

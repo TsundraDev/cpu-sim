@@ -46,7 +46,9 @@ public:
   WireBlock(EventQueue* event_queue);
   ~WireBlock();
   virtual void recvEvent(Agent* src, uint8_t* data, uint64_t size);
-  virtual void update(Agent* src, uint8_t* data, uint64_t size);
+  virtual void updateInput(Agent* src, uint8_t* data, uint64_t size);
+  virtual void updateBlock();
+  virtual void updateOutput();
 };
 
 #endif
