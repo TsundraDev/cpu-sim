@@ -4,47 +4,7 @@
 #include "event-sim.hpp"
 #include "BaseBlock.hpp"
 #include "Register.hpp"
-
-class Add4 : public WireBlock {
-private:
-  // Input
-  std::pair<BaseBlock*, uint64_t> m_in;
-
-  // Output
-  std::pair<uint64_t, std::vector<BaseBlock*>> m_out;
-
-public:
-  Add4(EventQueue* event_queue) :
-    WireBlock(event_queue),
-    m_in(std::pair<BaseBlock*, uint64_t>(nullptr, 0)),
-    m_out(std::pair<uint64_t, std::vector<BaseBlock*>>(0, std::vector<BaseBlock*>())) {}
-
-  ~Add4() {}
-
-  void setInput(BaseBlock* block)  { m_in.first = block; }
-  void addOutput(BaseBlock* block) { m_out.second.push_back(block); }
-
-  void updateInput(Agent* src, uint8_t* data, uint64_t size) {
-    // Update output values
-    assert(src == (Agent*)m_in.first);
-    m_in.second = *(uint64_t*)data;
-  }
-
-  void updateBlock() {
-    m_out.first = m_in.second + 4;
-  }
-
-  void updateOutput() {
-    // Update output blocks
-    uint64_t cur_tick = m_event_queue->tick();
-    uint64_t* send_data = new uint64_t;
-    *send_data = m_out.first;
-    for (uint64_t i = 0; i < m_out.second.size(); i++) {
-      this->createEvent(Event(cur_tick, (Agent*)this, (Agent*)m_out.second[i], (uint8_t*)send_data, 8));
-    }
-  }
-  
-};
+#include "UpdatePC.hpp"
 
 int main() {
 
@@ -53,7 +13,7 @@ int main() {
   Clock clock = Clock(&event_queue);
 
   Register pc = Register(&clock);
-  Add4     update_pc = Add4(&event_queue);
+  UpdatePC update_pc = UpdatePC(&event_queue);
 
   pc.setInput(&update_pc);
   pc.addOutput(&update_pc);
