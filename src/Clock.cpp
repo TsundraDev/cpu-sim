@@ -29,5 +29,4 @@ void Clock::update() {
   // Prepare next tick
   uint64_t next_tick = cur_tick + 1;
   this->createEvent(Event(next_tick, this, this));
-  printf("clock tick : %ld\n", cur_tick);
 }

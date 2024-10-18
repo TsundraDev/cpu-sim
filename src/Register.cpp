@@ -25,7 +25,6 @@ void Register::updateInput(Agent* src, uint8_t* data, uint64_t size) {
 void Register::updateBlock() {
   uint64_t input = m_input.get();
   m_output.set(input);
-  printf("Reg val : %lx\n", input);
 }
 
 void Register::updateOutput() {
