@@ -1,7 +1,7 @@
 #ifndef __CPU_SIM__COMPONENTS__REGISTER_HPP__
 #define __CPU_SIM__COMPONENTS__REGISTER_HPP__
 
-#include <base/Input.hpp>
+#include <base/BlockIO.hpp>
 #include <base/RegisterBlock.hpp>
 #include <components/Clock.hpp>
 #include <utility>

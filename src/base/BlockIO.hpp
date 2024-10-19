@@ -1,5 +1,5 @@
-#ifndef __CPU_SIM__INPUT_HPP__
-#define __CPU_SIM__INPUT_HPP__
+#ifndef __CPU_SIM__BASE__BLOCKIO_HPP__
+#define __CPU_SIM__BASE__BLOCKIO_HPP__
 
 #include <base/BaseBlock.hpp>
 #include <vector>
