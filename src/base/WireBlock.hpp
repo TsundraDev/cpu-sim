@@ -1,5 +1,5 @@
-#ifndef __CPU_SIM__WIREBLOCK_HPP__
-#define __CPU_SIM__WIREBLOCK_HPP__
+#ifndef __CPU_SIM__BASE__WIREBLOCK_HPP__
+#define __CPU_SIM__BASE__WIREBLOCK_HPP__
 
 #include <cstdint>
 

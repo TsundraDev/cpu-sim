@@ -1,5 +1,5 @@
-#ifndef __CPU_SIM__BASEBLOCK_HPP__
-#define __CPU_SIM__BASEBLOCK_HPP__
+#ifndef __CPU_SIM__BASE__BASEBLOCK_HPP__
+#define __CPU_SIM__BASE__BASEBLOCK_HPP__
 
 #include <event-sim.hpp>
 

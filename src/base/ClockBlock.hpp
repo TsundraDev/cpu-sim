@@ -1,5 +1,5 @@
-#ifndef __CPU_SIM__CLOCKBLOCK_HPP__
-#define __CPU_SIM__CLOCKBLOCK_HPP__
+#ifndef __CPU_SIM__BASE__CLOCKBLOCK_HPP__
+#define __CPU_SIM__BASE__CLOCKBLOCK_HPP__
 
 #include <cstdint>
 #include <vector>

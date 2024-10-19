@@ -1,5 +1,5 @@
-#ifndef __CPU_SIM__REGISTERBLOCK_HPP__
-#define __CPU_SIM__REGISTERBLOCK_HPP__
+#ifndef __CPU_SIM__BASE__REGISTERBLOCK_HPP__
+#define __CPU_SIM__BASE__REGISTERBLOCK_HPP__
 
 #include <cstdint>
 
