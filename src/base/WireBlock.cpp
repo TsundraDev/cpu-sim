@@ -1,4 +1,4 @@
-#include "BaseBlock.hpp"
+#include "WireBlock.hpp"
 #include <cstdio>
 #include <cstdlib>
 

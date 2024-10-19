@@ -2,7 +2,7 @@
 #define __CPU_SIM__UPDATEPC_HPP__
 
 #include <utility>
-#include "BaseBlock.hpp"
+#include <base/WireBlock.hpp>
 
 class UpdatePC : public WireBlock {
 private:

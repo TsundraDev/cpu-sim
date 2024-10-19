@@ -1,10 +1,9 @@
 #include <cstdio>
 #include <cassert>
 
-#include "event-sim.hpp"
-#include "BaseBlock.hpp"
-#include "Register.hpp"
-#include "UpdatePC.hpp"
+#include <event-sim.hpp>
+#include <components/Register.hpp>
+#include <components/UpdatePC.hpp>
 
 int main() {
 
@@ -12,7 +11,7 @@ int main() {
   EventQueue event_queue = EventQueue();
   Clock clock = Clock(&event_queue);
 
-  Register pc = Register(&clock);
+  Register pc = Register(&event_queue, &clock);
   UpdatePC update_pc = UpdatePC(&event_queue);
 
   // Setup PC

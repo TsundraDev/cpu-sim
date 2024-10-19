@@ -1,19 +1,19 @@
 #ifndef __CPU_SIM__REGISTER_HPP__
 #define __CPU_SIM__REGISTER_HPP__
 
-#include "Input.hpp"
-#include "BaseBlock.hpp"
+#include "../base/Input.hpp"
+#include "../base/RegisterBlock.hpp"
 #include <utility>
 
 class Register : public RegisterBlock {
 private:
   // Input
-  Input<uint64_t> m_input;
-  Output<uint64_t> m_output;
+  BlockInput<uint64_t> m_input;
+  BlockOutput<uint64_t> m_output;
 
 public:
   // Constructor / Destructor
-  Register(Clock* clock);
+  Register(EventQueue* event_queue, Clock* clock);
   ~Register();
 
   // Register setup

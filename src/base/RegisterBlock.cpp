@@ -1,10 +1,12 @@
-#include "BaseBlock.hpp"
+#include "RegisterBlock.hpp"
 #include <cstdio>
 #include <cstdlib>
+#include <cassert>
 
-RegisterBlock::RegisterBlock(Clock* clock) :
-  BaseBlock(clock->event_queue()),
+RegisterBlock::RegisterBlock(EventQueue* event_queue, Clock* clock) :
+  BaseBlock(event_queue),
   m_clock(clock) {
+  assert(event_queue == clock->event_queue());
   clock->addOutput(this);
 }
 

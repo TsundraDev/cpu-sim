@@ -3,10 +3,12 @@
 #include <cassert>
 #include <cstdio>
 
-Register::Register(Clock* clock) :
-  RegisterBlock(clock),
-  m_input(Input<uint64_t>(nullptr, 0)),
-  m_output(Output<uint64_t>(0)) {}
+Register::Register(EventQueue* event_queue, Clock* clock) :
+  RegisterBlock(event_queue, clock),
+  m_input(BlockInput<uint64_t>(0)),
+  m_output(BlockOutput<uint64_t>(0)) {
+  assert(event_queue == clock->event_queue());
+}
 
 Register::~Register() {
 

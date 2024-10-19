@@ -5,17 +5,17 @@
 #include <vector>
 
 template<typename T>
-class Input {
+class BlockInput {
 private:
   BaseBlock* m_source;
   T          m_val;
 
 public:
-  Input(BaseBlock* source, T val) :
-    m_source(source),
+  BlockInput(T val) :
+    m_source(nullptr),
     m_val(val) {}
 
-  ~Input() {}
+  ~BlockInput() {}
 
   void       setSource(BaseBlock* source) { m_source  = source; }
   BaseBlock* getSource()                  { return m_source; }
@@ -25,17 +25,17 @@ public:
 };
 
 template<typename T>
-class Output {
+class BlockOutput {
 private:
   std::vector<BaseBlock*> m_dest;
   T                       m_val;
 
 public:
-  Output(T val) :
+  BlockOutput(T val) :
     m_dest(std::vector<BaseBlock*>()),
     m_val(val) {}
 
-  ~Output() {}
+  ~BlockOutput() {}
 
   void                    addDestination(BaseBlock* dest) { m_dest.push_back(dest); }
   std::vector<BaseBlock*> getDestination()                { return m_dest; }
