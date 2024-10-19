@@ -1,5 +1,5 @@
-#ifndef __CPU_SIM__UPDATEPC_HPP__
-#define __CPU_SIM__UPDATEPC_HPP__
+#ifndef __CPU_SIM__COMPONENTS__UPDATEPC_HPP__
+#define __CPU_SIM__COMPONENTS__UPDATEPC_HPP__
 
 #include <utility>
 #include <base/WireBlock.hpp>

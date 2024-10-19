@@ -1,5 +1,5 @@
-#ifndef __CPU_SIM__CLOCK_HPP__
-#define __CPU_SIM__CLOCK_HPP__
+#ifndef __CPU_SIM__COMPONENTS__CLOCK_HPP__
+#define __CPU_SIM__COMPONENTS__CLOCK_HPP__
 
 #include <cstdint>
 #include <vector>
