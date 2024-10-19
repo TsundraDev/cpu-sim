@@ -10,6 +10,7 @@ class WireBlock : public BaseBlock {
 public:
   WireBlock(EventQueue* event_queue);
   ~WireBlock();
+
   void recvEvent(Agent* src, uint8_t* data, uint64_t size) override;
   virtual void updateInput(Agent* src, uint8_t* data, uint64_t size);
   virtual void updateBlock();

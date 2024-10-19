@@ -14,6 +14,7 @@ private:
 public:
   RegisterBlock(EventQueue* event_queue, Clock* clock);
   ~RegisterBlock();
+
   void recvEvent(Agent* src, uint8_t* data, uint64_t size) override;
   virtual void updateInput(Agent* src, uint8_t* data, uint64_t size);
   virtual void updateBlock();

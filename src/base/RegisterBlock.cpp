@@ -1,7 +1,8 @@
 #include "RegisterBlock.hpp"
+
+#include <cassert>
 #include <cstdio>
 #include <cstdlib>
-#include <cassert>
 
 RegisterBlock::RegisterBlock(EventQueue* event_queue, Clock* clock) :
   BaseBlock(event_queue),

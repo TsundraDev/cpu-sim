@@ -1,4 +1,5 @@
 #include "WireBlock.hpp"
+
 #include <cstdio>
 #include <cstdlib>
 
@@ -16,7 +17,7 @@ void WireBlock::recvEvent(Agent* src, uint8_t* data, uint64_t size) {
 }
 
 void WireBlock::updateInput(Agent* src, uint8_t* data, uint64_t size) {
-  fprintf(stderr, "Unimplemented WireBlock::update\n");
+  fprintf(stderr, "Unimplemented WireBlock::updateInput\n");
   exit(1);
 }
 
