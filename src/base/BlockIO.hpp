@@ -42,6 +42,13 @@ public:
 
   T    get()      { return m_val; }
   void set(T val) { m_val = val; }
+
+  void send(Agent* sender, uint64_t tick) {
+    for (uint64_t i = 0; i < m_dest.size(); i++) {
+      sender->createEvent(Event(tick, sender, m_dest[i]));
+    }
+  }
+
 };
 
 #endif

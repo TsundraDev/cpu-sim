@@ -7,16 +7,17 @@
 #include <event-sim.hpp>
 #include <base/BaseBlock.hpp>
 #include <base/RegisterBlock.hpp>
+#include <base/BlockIO.hpp>
 
 class ClockBlock : public BaseBlock {
 private:
-  std::vector<RegisterBlock*> m_output;
+  BlockOutput<uint8_t> m_output;
 
 public:
   ClockBlock(EventQueue* event_queue);
   ~ClockBlock();
 
-  void addOutput(RegisterBlock* block) { m_output.push_back(block); }
+  void addOutput(RegisterBlock* block) { m_output.addDestination(block); }
 
   void recvEvent(Agent* src, uint8_t* data, uint64_t size) override;
   void updateInput(Agent* src, uint8_t* data, uint64_t size) override;

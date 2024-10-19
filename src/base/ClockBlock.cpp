@@ -6,7 +6,7 @@
 
 ClockBlock::ClockBlock(EventQueue* event_queue) :
   BaseBlock(event_queue),
-  m_output(std::vector<RegisterBlock*>()) {}
+  m_output(BlockOutput<uint8_t>(0)) {}
 
 ClockBlock::~ClockBlock() {
 
@@ -30,9 +30,7 @@ void ClockBlock::updateBlock() {
 void ClockBlock::updateOutput() {
   // Update clocked blocks
   uint64_t cur_tick = m_event_queue->tick();
-  for (uint64_t i = 0; i < m_output.size(); i++) {
-    this->createEvent(Event(cur_tick, this, m_output[i]));
-  }
+  m_output.send(this, cur_tick);
   
   // Prepare next tick
   uint64_t next_tick = cur_tick + 1;
