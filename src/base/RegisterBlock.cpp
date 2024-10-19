@@ -4,7 +4,9 @@
 #include <cstdio>
 #include <cstdlib>
 
-RegisterBlock::RegisterBlock(EventQueue* event_queue, Clock* clock) :
+#include <base/ClockBlock.hpp>
+
+RegisterBlock::RegisterBlock(EventQueue* event_queue, ClockBlock* clock) :
   BaseBlock(event_queue),
   m_clock(clock) {
   assert(event_queue == clock->event_queue());

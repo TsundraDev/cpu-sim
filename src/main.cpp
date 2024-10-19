@@ -2,6 +2,7 @@
 #include <cassert>
 
 #include <event-sim.hpp>
+#include <components/Clock.hpp>
 #include <components/Register.hpp>
 #include <components/UpdatePC.hpp>
 

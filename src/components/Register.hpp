@@ -3,6 +3,7 @@
 
 #include "../base/Input.hpp"
 #include "../base/RegisterBlock.hpp"
+#include <components/Clock.hpp>
 #include <utility>
 
 class Register : public RegisterBlock {

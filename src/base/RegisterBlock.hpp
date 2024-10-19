@@ -5,14 +5,15 @@
 
 #include <event-sim.hpp>
 #include <base/BaseBlock.hpp>
-#include <components/Clock.hpp>
+
+class ClockBlock;
 
 class RegisterBlock : public BaseBlock {
 private:
-  Clock* m_clock;
+  ClockBlock* m_clock;
 
 public:
-  RegisterBlock(EventQueue* event_queue, Clock* clock);
+  RegisterBlock(EventQueue* event_queue, ClockBlock* clock);
   ~RegisterBlock();
 
   void recvEvent(Agent* src, uint8_t* data, uint64_t size) override;

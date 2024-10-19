@@ -11,6 +11,7 @@ add_executable(cpu-sim-test
   src/main.cpp
 
   src/base/BaseBlock.cpp
+  src/base/ClockBlock.cpp
   src/base/WireBlock.cpp
   src/base/RegisterBlock.cpp
 

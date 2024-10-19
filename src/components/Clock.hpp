@@ -6,20 +6,14 @@
 
 #include "event-sim.hpp"
 #include "../base/BaseBlock.hpp"
+#include <base/ClockBlock.hpp>
 
-class Clock : public BaseBlock {
-private:
-  std::vector<BaseBlock*> m_output;
-
+class Clock : public ClockBlock {
 public:
   Clock(EventQueue* event_queue);
   ~Clock();
 
-  void addOutput(BaseBlock* clocked_block) { m_output.push_back(clocked_block); }
-
   void init();
-  void recvEvent(Agent* src, uint8_t* data, uint64_t size);
-  void update();
 };
 
 #endif
