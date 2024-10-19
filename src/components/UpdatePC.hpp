@@ -3,14 +3,13 @@
 
 #include <utility>
 #include <base/WireBlock.hpp>
+#include <base/BlockIO.hpp>
 
 class UpdatePC : public WireBlock {
 private:
   // Input
-  std::pair<BaseBlock*, uint64_t> m_in;
-
-  // Output
-  std::pair<uint64_t, std::vector<BaseBlock*>> m_out;
+  BlockInput<uint64_t>  m_input;
+  BlockOutput<uint64_t> m_output;
 
 public:
   UpdatePC(EventQueue* event_queue);
