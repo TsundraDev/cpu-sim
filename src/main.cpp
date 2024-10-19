@@ -8,9 +8,10 @@
 int main() {
 
   printf("cpu-sim\n");
+
+  // Setup devices
   EventQueue event_queue = EventQueue();
   Clock clock = Clock(&event_queue);
-
   Register pc = Register(&event_queue, &clock);
   UpdatePC update_pc = UpdatePC(&event_queue);
 
