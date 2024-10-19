@@ -1,8 +1,8 @@
 #ifndef __CPU_SIM__REGISTER_HPP__
 #define __CPU_SIM__REGISTER_HPP__
 
-#include "../base/Input.hpp"
-#include "../base/RegisterBlock.hpp"
+#include <base/Input.hpp>
+#include <base/RegisterBlock.hpp>
 #include <components/Clock.hpp>
 #include <utility>
 

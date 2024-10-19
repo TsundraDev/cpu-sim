@@ -1,4 +1,5 @@
 #include "UpdatePC.hpp"
+
 #include <cassert>
 
 UpdatePC::UpdatePC(EventQueue* event_queue) :

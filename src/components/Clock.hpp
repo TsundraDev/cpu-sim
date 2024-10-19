@@ -5,7 +5,7 @@
 #include <vector>
 
 #include "event-sim.hpp"
-#include "../base/BaseBlock.hpp"
+#include <base/BaseBlock.hpp>
 #include <base/ClockBlock.hpp>
 
 class Clock : public ClockBlock {
