@@ -1,7 +1,7 @@
 #ifndef __CPU_SIM__INPUT_HPP__
 #define __CPU_SIM__INPUT_HPP__
 
-#include "BaseBlock.hpp"
+#include <base/BaseBlock.hpp>
 #include <vector>
 
 template<typename T>
