@@ -2,6 +2,7 @@
 #define __CPU_SIM__BASE__BLOCKIO_HPP__
 
 #include <base/BaseBlock.hpp>
+
 #include <vector>
 
 template<typename T>
